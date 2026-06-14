@@ -29,7 +29,6 @@ print(f"ВНИМАНИЕ: Дисбаланс классов!\n{y.value_counts()}
 models = {
     "Logistic Regression": LogisticRegression(max_iter=1000, class_weight='balanced'),
     "Random Forest": RandomForestClassifier(n_estimators=100, max_depth=10, class_weight='balanced', random_state=42),
-    # В XGBoost балансировка идет через scale_pos_weight
     "XGBoost Classifier": XGBClassifier(n_estimators=100, max_depth=5, learning_rate=0.1, scale_pos_weight=(len(y)-sum(y))/sum(y), random_state=42)
 }
 
